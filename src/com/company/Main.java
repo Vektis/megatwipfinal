@@ -6,7 +6,6 @@ public class Main {
         Scanner data = new Scanner(new File("rawDataU6.txt"));
         Integer c = -1;
         String fbewesbreobr = data.nextLine();
-
         while(data.hasNextLine()){
             String slice = data.nextLine();
             if(slice.length() == 0){
@@ -16,18 +15,16 @@ public class Main {
                 analyzeSlice(slice);
             }
         }
-
         output();
-
     }
     public static void output(){
-        System.out.println("Name\tNumber\tAvg\t\t Q1\t Q2");
+        System.out.println("Number\tName\tAvg\t\t Q1\t Q2");
         for (int i = 0; i < Student.all.size(); i++) {
             Student temp = Student.all.get(i);
             temp.totalScoreQ1();
             temp.totalScoreQ2();
             temp.total();
-            System.out.println(temp.name + "\t" + temp.snum + "\t\t" + temp.t + "/19  " + temp.q1 + "  " + temp.q2);
+            System.out.println(temp.snum + "\t" + temp.name + "\t\t" + temp.t + "/19  " + temp.q1 + "  " + temp.q2);
         }
     }
     public static void analyzeSlice(String s) throws IOException {
@@ -48,7 +45,6 @@ public class Main {
                 if (o == num)
                     is = false;
             }
-
             if (is) {
                 Student toAdd = new Student(num);
                 Student.all.add(toAdd);
@@ -68,23 +64,17 @@ public class Main {
                             break;
                         }
                     }
-
                 }
             }
             whatKind(s, num);
-
         }
     }
-
-
-
         public static void whatKind(String s, int i){
             Student stu = null;
             for (int j = 0; j < Student.all.size(); j++) {
                 if(Student.all.get(j).snum == i){
                     stu = Student.all.get(j);
                 }
-
             }
             boolean plus,deci,tab,alr;
             plus = deci = tab = alr = false;
@@ -132,9 +122,7 @@ public class Main {
                         else if(tab)
                             stu.addScoreQ2(-.25 * add);
                     }
-
                 }
-
             }
     }
 }

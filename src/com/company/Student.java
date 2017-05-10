@@ -31,18 +31,18 @@ public void addScoreQ1(double i){
     scoresq1.add(i);
 }
 public void addScoreQ2(double i){
-    scoresq2.add(i);
+    scoresq2.add(i);}
+public void totalScoreQ1() {
+    for (double s : scoresq1){
+        q1 += s;
 }
-public void totalScoreQ1(){
-for(double s: scoresq1)
-    q1 += s;
-    q1 = (int) (q1+ .5) /2;
-
-    }
+    q1 =  (q1) /2;
+}
     public void totalScoreQ2(){
-        for(double s: scoresq2)
-            q2+=s;
-        q2 = (int) (q2 + .5 )/2;
+        for(double s: scoresq2) {
+            q2 += s;
+        }
+        q2 = (q2 )/2;
     }
     public void total(){
         t = q1 + q2;
