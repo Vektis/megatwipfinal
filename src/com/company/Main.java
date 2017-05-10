@@ -52,15 +52,32 @@ public class Main {
                 int c = 0;
                 ArrayList<String> namae = new ArrayList<>();
                 while(names.hasNext()){
+
                     namae.add(names.next());
                 }
                 for (int i = 1; i < namae.size(); i++) {
                     String temp = namae.get(i);
+                    String d1, d2;
+                    d1 = d2 = "";
+                    if(temp.length() == 2){
+                       d1 = temp.substring(0,1);
+                        d2 = temp.substring(1,2);
+                    }
                     String b4 = namae.get(i-1);
-                    if(temp.matches("\\d")){
-                    int ch = Integer.parseInt(temp);
+                    if(temp.matches("\\d") || d1.matches("\\d") && d2.matches("\\d")){
+                    int ch = 0;
+                        if(d1.matches("\\d") && d2.matches("\\d")) {
+                            int cc = Integer.parseInt(d2);
+                            int d11 = Integer.parseInt(d1);
+                            ch = (10 * d11) + cc;
+                        }
+                        if(temp.matches("\\d")){
+                            ch = Integer.parseInt(temp);
+                        }
+                        System.out.println(ch + ":" + temp);
                         if(ch == num){
                             toAdd.giveName(b4);
+
                             break;
                         }
                     }
