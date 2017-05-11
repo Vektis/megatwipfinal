@@ -41,6 +41,7 @@ public void totalScoreQ1() {
         q1 += s;
 }
     q1 =  (q1) /2;
+
 }
     public void totalScoreQ2(){
         for(double s: scoresq2) {
