@@ -19,11 +19,13 @@ public class Main {
     }
     public static void output(){
         System.out.println("Number\tName\tAvg\t\t Q1\t Q2");
+        Collections.sort(Student.all);
         for (int i = 0; i < Student.all.size(); i++) {
             Student temp = Student.all.get(i);
             temp.totalScoreQ1();
             temp.totalScoreQ2();
             temp.total();
+
             System.out.println(temp.snum + "\t" + temp.name + "\t\t" + temp.t + "/19  " + temp.q1 + "  " + temp.q2);
         }
     }
@@ -74,7 +76,6 @@ public class Main {
                         if(temp.matches("\\d")){
                             ch = Integer.parseInt(temp);
                         }
-                        System.out.println(ch + ":" + temp);
                         if(ch == num){
                             toAdd.giveName(b4);
 
@@ -86,7 +87,7 @@ public class Main {
             whatKind(s, num);
         }
     }
-        public static void whatKind(String s, int i){
+        public static void whatKind(String s, int i){ // detects points
             Student stu = null;
             for (int j = 0; j < Student.all.size(); j++) {
                 if(Student.all.get(j).snum == i){

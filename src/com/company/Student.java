@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * Created by vianrosal on 4/12/17.
  */
-public class Student {
+public class Student implements Comparable{
 public String name = "[n.a]";
 public int snum;
     public double q1;
@@ -21,6 +21,10 @@ public Student (Integer i){
         numsNull = true;
     }
 }
+    public int compareTo(Object ss){
+        Student s = (Student)ss;
+        return(this.name.compareTo(s.name));
+    }
 
 public void giveName(String s){
     name  = s;
@@ -47,4 +51,5 @@ public void totalScoreQ1() {
     public void total(){
         t = q1 + q2;
     }
+
 }
