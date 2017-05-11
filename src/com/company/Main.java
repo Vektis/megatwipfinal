@@ -30,15 +30,17 @@ public class Main {
     int longlen = longest.length();
         System.out.println("Number" + tab(longlen,6) + "Name" + tab(longlen,4) + "Avg" + tab(longlen,3) + "Q1" + tab(longlen,2) + "Q2");
 
+
         for (int i = 0; i < Student.all.size(); i++) {
             Student temp = Student.all.get(i);
             temp.totalScoreQ1();
             temp.totalScoreQ2();
             temp.total();
+            String ss = temp.snum + "";
             String tt = temp.t + "";
             String ty = temp.q1 + "";
             String tu = temp.q2 + "";
-            System.out.println(temp.snum + tab(longlen,1) + temp.name + tab(longlen,temp.name.length()) + temp.t + "/19" + tab(longlen,tt.length()+3) + temp.q1 + tab(longlen,ty.length()) + temp.q2);
+            System.out.println(temp.snum + tab(longlen,ss.length()) + temp.name + tab(longlen,temp.name.length()) + temp.t + "/19" + tab(longlen,tt.length()+3) + temp.q1 + tab(longlen,ty.length()) + temp.q2);
         }
     }
     public static String tab(int l,int i){
@@ -47,7 +49,7 @@ public class Main {
         for (int j = 0; j < t; j++) {
             s+=" ";
         }
-        return s;
+        return s+ "  ";
 
     }
     public static void analyzeSlice(String s) throws IOException {
